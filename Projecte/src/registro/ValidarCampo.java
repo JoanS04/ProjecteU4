@@ -1,16 +1,17 @@
 package registro;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
 import java.util.Scanner;
 import java.util.regex.*;
 
 public class ValidarCampo 
 {
-    private static final String CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>/?";
-    static String codigo = "";
-    static Scanner sc = new Scanner(System.in);
+    private final String CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=[]{}|;:,.<>/?";
+    String codigo = "";
+    Scanner sc = new Scanner(System.in);
 
-    private static void generarCodigoAleatorio(int longitud) {
+    private void generarCodigoAleatorio(int longitud) {
         SecureRandom random = new SecureRandom();
         for (int i = 0; i < longitud; i++) {
             int index = random.nextInt(CARACTERES.length());
@@ -19,7 +20,7 @@ public class ValidarCampo
         System.out.println(codigo);
     }
 
-    private static Boolean verificarCodigo() 
+    public Boolean verificarCodigo() 
     {
         generarCodigoAleatorio(8);
         System.out.print("Ingresa el código generado: ");
@@ -37,7 +38,7 @@ public class ValidarCampo
 
     
     
-    public static boolean compruebaPassword(String password) {
+    public boolean compruebaPassword(String password) {
         String patron = "^[A-Z][\\w]*[@#\\-_]\\d{2}$";
         
         Pattern p = Pattern.compile(patron);

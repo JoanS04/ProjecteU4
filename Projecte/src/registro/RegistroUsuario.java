@@ -14,9 +14,13 @@ public class RegistroUsuario {
 
     private void init() {
         try (Scanner scanner = new Scanner(System.in)) {
+            boolean valid = false;
             String username = getStringFromScanner(scanner, "Introduce un nombre de usuario: ", 1);
             String email = getStringFromScanner(scanner, "Introduce un correo electrónico: ", 2);
             String password = getStringFromScanner(scanner, "Introduce una contraseña: ", 3);
+            while (valid!= true){
+                valid = v.verificarCodigo();
+            }
 
             System.out.println("Los datos introducidos son:");
             System.out.println("Nombre de usuario: " + username);
@@ -37,7 +41,8 @@ public class RegistroUsuario {
             switch (comprovacio){
                 case 1 -> acceptat = v.compruebaNombre(valor, usuarios);
                 case 2 -> acceptat = v.compruebaEmail(valor);
-                case 3 -> acceptat = v.compruebaEmail(valor);
+                case 3 -> acceptat = v.compruebaPassword(valor);
+                case 4 -> acceptat = v.verificarCodigo();
             }
 
         }
@@ -47,4 +52,7 @@ public class RegistroUsuario {
     
     public static void main(String[] args) {
         new RegistroUsuario();
+    }
+
+}
 
