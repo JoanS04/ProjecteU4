@@ -47,6 +47,4 @@ public class RegistroUsuario {
     
     public static void main(String[] args) {
         new RegistroUsuario();
-    }
-    
-}
+
