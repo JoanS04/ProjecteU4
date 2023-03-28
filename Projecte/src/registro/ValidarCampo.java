@@ -1,3 +1,5 @@
+package registro;
+
 import java.security.SecureRandom;
 import java.util.Scanner;
 import java.util.regex.*;
@@ -44,19 +46,4 @@ public class ValidarCampo
         
         return m.matches();
     }
-
-
-
-
-    // public static void main(String[] args) 
-    // {
-
-    //     verificarCodigo();
-    //     System.out.print("Ingresa una contrasenya segura: ");
-    //     String password1 = sc.nextLine();
-        
-    //     System.out.println(compruebaPassword(password1));
-    // }
-    
-
 }
